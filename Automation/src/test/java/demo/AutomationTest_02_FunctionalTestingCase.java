@@ -1,7 +1,6 @@
 package demo;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
@@ -13,7 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AutomationTest_02_FunctionalTestingCase {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	public static void main(String[] args) throws Exception {
+		ScreenRecorderUtil.startRecord("main");
 	//	launch browser
 		WebDriver driver=new ChromeDriver();
 	//maximize window	
@@ -48,7 +48,7 @@ public class AutomationTest_02_FunctionalTestingCase {
 		Thread.sleep(3000);
 		driver.switchTo().alert().dismiss();
 		driver.close();
-
+		ScreenRecorderUtil.stopRecord();
 	}
 
 }

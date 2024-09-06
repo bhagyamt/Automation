@@ -17,7 +17,9 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class AutomationTest_01_UITestingCase {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		
+		ScreenRecorderUtil.startRecord("main");
 		WebDriver driver = null;
         // Define the browsers to test
 		String[] browsers = { "chrome", "firefox", "safari"};
@@ -74,6 +76,7 @@ public class AutomationTest_01_UITestingCase {
 			}
             // Quit the browser session
 			driver.quit();
+			ScreenRecorderUtil.stopRecord();
 		}
 	}
 }
